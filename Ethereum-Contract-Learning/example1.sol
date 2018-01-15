@@ -19,9 +19,9 @@ contract OwnedToken {
         // to `TokenCreator` and assume that the type of
         // the calling contract is TokenCreator, there is
         // no real way to check that.
-//1、这里做了显示的类型转换，将address转成TokenCreator，这里做了假设是，TokenCreator创建了合约；
-//2、是TokenCreator调用生成了本合约；因为下面的msg.sender是该合约的创建者，同时转成了TokenCreator；
-//3、是TokenCreator合约调用生成新的合约(本合约)；?
+		//1、这里做了显示的类型转换，将address转成TokenCreator，这里做了假设是，TokenCreator创建了合约；
+		//2、是TokenCreator调用生成了本合约；因为下面的msg.sender是该合约的创建者，同时转成了TokenCreator；
+		//3、是TokenCreator合约调用生成新的合约(本合约)；
         creator = TokenCreator(msg.sender);
         name = _name;
     }
